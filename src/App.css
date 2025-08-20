@@ -28,6 +28,28 @@
   color: #61dafb;
 }
 
+.form-control.custom-input {
+  border: 2px solid black !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+
+.form-control.custom-input:focus {
+  border: 2px solid black !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.footer-email {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;       /* Bold */
+  font-style: normal;     /* "Bold" is controlled by font-weight */
+  font-size: 13px;
+  line-height: 19px;      /* No leading-trim in CSS */
+  letter-spacing: 0.03em; /* 3% letter-spacing */
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
