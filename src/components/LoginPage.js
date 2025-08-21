@@ -13,7 +13,7 @@ const LoginPage = () => {
 
         // Password validation
         const passwordRegex =
-           /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\-]).{8,}$/
+           /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~-]).{8,}$/
 
         if (!passwordRegex.test(password)) {
             setError(
