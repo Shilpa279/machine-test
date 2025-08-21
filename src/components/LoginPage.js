@@ -45,8 +45,9 @@ const LoginPage = () => {
                             <Form.Control
                                 type="text"
                                 placeholder="User name or email"
+                                autoComplete="new-username"
                                 required
-                            // className="form-control"
+                                className="border border-dark border-2 rounded-0"
                             />
                         </Form.Group>
 
@@ -57,7 +58,8 @@ const LoginPage = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 isInvalid={!!error}
-                                className="custom-input"
+                                autoComplete="new-password"
+                                className=" border border-dark border-2 rounded-0"
                             />
                             <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
                         </Form.Group>
@@ -76,7 +78,26 @@ const LoginPage = () => {
                             Sign In
                         </Button>
 
-                        <p className="text-center">Or Sign in With</p>
+
+                        <div className="d-flex align-items-center my-4">
+                            <hr className="flex-grow-1 m-0" style={{ borderTop: "2px solid black", opacity: 1 }} />
+                            <span
+                                className="px-2"
+                                style={{
+                                    fontFamily: "Noto Sans",
+                                    fontWeight: 700,
+                                    fontSize: "13px",
+                                    lineHeight: "19px",
+                                    letterSpacing: "3%",
+                                    textAlign: "center",
+                                    backgroundColor: "white",
+                                }}
+                            >
+                                Or Sign in With
+                            </span>
+                            <hr className="flex-grow-1 m-0" style={{ borderTop: "2px solid black" , opacity: 1}} />
+                        </div>
+
                         <div className="d-flex justify-content-center gap-3">
                             <i className="bi bi-google fs-4"></i>
                             <i className="bi bi-facebook fs-4"></i>
@@ -87,7 +108,7 @@ const LoginPage = () => {
                 </div>
 
                 {/* Right section - Hide on small screens */}
-                <div className="d-none d-md-flex justify-content-center align-items-center w-50">
+                <div className="d-none d-md-flex justify-content-center align-items-center w-100 w-md-50">
                     <img
                         src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png"
                         alt="Illustration"

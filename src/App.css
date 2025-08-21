@@ -42,11 +42,11 @@
 
 .footer-email {
   font-family: "Noto Sans", sans-serif;
-  font-weight: 700;       /* Bold */
-  font-style: normal;     /* "Bold" is controlled by font-weight */
+  font-weight: 700;       
+  font-style: normal;     
   font-size: 13px;
-  line-height: 19px;      /* No leading-trim in CSS */
-  letter-spacing: 0.03em; /* 3% letter-spacing */
+  line-height: 19px;     
+  letter-spacing: 0.03em; 
   text-align: center;
 }
 

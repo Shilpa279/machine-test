@@ -33,37 +33,53 @@ const HomePage = () => {
         <div>
             {/* HEADER */}
             <Container className="my-4">
-                <header className="d-flex justify-content-between align-items-center px-4 py-3 border-bottom">
+                <header className="d-flex justify-content-between align-items-center py-3">
                     <h5 className="fw-bold">Countries</h5>
                     <nav>
                         <Button
                             variant="link"
-                            className="text-dark me-2"
+                            className={`text-decoration-none me-2 ${filterRegion === "All"
+                                    ? "fw-bold text-dark border-bottom border-2"
+                                    : "text-muted"
+                                }`}
                             onClick={() => setFilterRegion("All")}
                         >
                             All
                         </Button>
+
                         <Button
                             variant="link"
-                            className="text-dark me-2"
+                            className={`text-decoration-none me-2 ${filterRegion === "Asia"
+                                    ? "fw-bold text-dark border-bottom border-2"
+                                    : "text-muted"
+                                }`}
                             onClick={() => setFilterRegion("Asia")}
                         >
                             Asia
                         </Button>
+
                         <Button
                             variant="link"
-                            className="text-dark me-2"
+                            className={`text-decoration-none me-2 ${filterRegion === "Europe"
+                                    ? "fw-bold text-dark border-bottom border-2"
+                                    : "text-muted"
+                                }`}
                             onClick={() => setFilterRegion("Europe")}
                         >
                             Europe
                         </Button>
                     </nav>
                 </header>
+
             </Container>
 
             {/* MAIN CONTENT */}
             <Container className="my-4">
-                <h2 className="text-center mb-4 fw-bold">WELCOME</h2>
+                <div className="d-flex align-items-center my-4">
+                    <hr className="flex-grow-1 m-0" style={{ borderTop: "2px solid black", opacity: 1 }} />
+                    <h2 className="mx-3 fw-bold mb-0">WELCOME</h2>
+                    <hr className="flex-grow-1 m-0" style={{ borderTop: "2px solid black", opacity: 1 }} />
+                </div>
 
                 {/* Slider + Side Panel */}
                 <Row className="mb-5">
@@ -73,7 +89,7 @@ const HomePage = () => {
                             {filteredCountries.slice(0, 5).map((country) => (
                                 <Carousel.Item key={country.name}>
                                     <div
-                                        className="d-flex justify-content-center align-items-center bg-light border"
+                                        className="d-flex justify-content-center align-items-center bg-light border border-dark border-2"
                                         style={{ height: "250px", cursor: "pointer" }}
                                         onClick={() => setSelectedCountry(country)} // click to update side panel
                                     >
@@ -89,9 +105,9 @@ const HomePage = () => {
                     </Col>
 
                     {/* SIDE PANEL */}
-                    <Col md={4}>
+                    <Col md={4} className="">
                         <div
-                            className="bg-light border d-flex flex-column justify-content-center align-items-center p-3"
+                            className="bg-light border border-dark border-2 d-flex flex-column justify-content-center align-items-center p-3"
                             style={{ height: "250px" }}
                         >
                             {selectedCountry ? (
@@ -116,7 +132,7 @@ const HomePage = () => {
                 <Row>
                     {filteredCountries.slice(0, visibleCountries).map((country) => (
                         <Col xs={12} sm={6} className="mb-4" key={country.name}>
-                            <Card className="h-100 border p-2 d-flex flex-row align-items-center">
+                            <Card className="h-100 border border-dark border-2 p-2 d-flex flex-row align-items-center rounded-0">
                                 <div style={{ width: "60px", height: "40px", overflow: "hidden" }}>
                                     <img
                                         src={country.flags?.png || country.flag}   // handles both API formats
@@ -144,7 +160,7 @@ const HomePage = () => {
             </Container>
 
             {/* FOOTER */}
-            <footer className="text-center py-4 border-top">
+            <footer className="text-center py-4 ">
                 <div className="mb-4">
                     <i className="bi bi-facebook me-3 fs-5"></i>
                     <i className="bi bi-twitter me-3 fs-5"></i>
